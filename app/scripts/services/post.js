@@ -3,14 +3,16 @@
 angular.module('bookApp')
   .factory('PostFactory', function(){
     return function(type){
-      this.type = type;
-      this.content = "blabla"
+      if(type==="text"){
+        this.type = type;
+        this.content = "";
+      }
     };
   });
 
 angular.module('bookApp')
   .factory('PostService', function (PostFactory) {
-    var posts = ["tada", "foobar"];
+    var posts = [];
 
     // Public API here
     return {
@@ -18,6 +20,7 @@ angular.module('bookApp')
         return posts;
       },
       addPost: function (type) {
+        console.log(posts);
         var post = new PostFactory(type);
         posts.push(post);
       }

@@ -1,8 +1,8 @@
 <div class="book">
   <div class="page">
-    <div data-ng-repeat="post in getPosts()">{{post}}</div>
-    <div class="post">
-      <a href="javascript:;" data-ng-click="addPost()">[add]<a>
+    <div data-ng-repeat="post in getPosts()" ng-switch on="post.type" class="post" data-ng-class="post.type">
+      <div ng-switch-when="text" contenteditable="plaintext-only" ng-model="post.content"></div>
     </div>
+    <a href="javascript:;" data-ng-click="addPost('text')">[add]<a>
   </div>
 </div>
