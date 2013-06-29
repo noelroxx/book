@@ -3,6 +3,7 @@ var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
+var modRewrite = require('connect-modrewrite');
 
 module.exports = function (grunt) {
   // load all grunt tasks
@@ -54,6 +55,9 @@ module.exports = function (grunt) {
           middleware: function (connect) {
             return [
               lrSnippet,
+              modRewrite([
+                '!\\.?(js|css|html|eot|svg|ttf|woff|otf|css|png|jpg|git|ico) / [L]'
+              ]),
               mountFolder(connect, '.tmp'),
               mountFolder(connect, yeomanConfig.app)
             ];
