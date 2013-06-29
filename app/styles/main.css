@@ -1,1 +1,37 @@
 /* Will be compiled down to a single stylesheet with your sass files */
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+.header {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  background: #d61251;
+  background-image: -moz-linear-gradient(left, #d61251, #e2411f);
+  background-image: -webkit-linear-gradient(left, #d61251, #e2411f);
+  background-image: -o-linear-gradient(left, #d61251, #e2411f);
+  background-image: -ms-linear-gradient(left, #d61251, #e2411f);
+  background-image: linear-gradient(left, #d61251, #e2411f);
+}
+.container {
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  bottom: 0px;
+  background: #f9f9f9;
+}
+.book {
+  padding: 10px;
+  width: 80%;
+  max-width: 1200px;
+  height: 90%;
+  max-height: 800px;
+  background: #fff;
+  display: block;
+  margin: 0 auto;
+  
+}
